@@ -456,11 +456,14 @@
 
       this._video.addEventListener('canplaythrough', () => {
         this.$accessor.video.setPlayable(true)
-        if (this.autoplay) {
-          this.$nextTick(() => {
-            this.$accessor.video.play()
-          })
-        }
+        this.$nextTick(() => {
+          this.$accessor.video.play()
+        })
+        // if (this.autoplay) {
+        //   this.$nextTick(() => {
+        //     this.$accessor.video.play()
+        //   })
+        // }
       })
 
       this._video.addEventListener('ended', () => {
@@ -502,6 +505,11 @@
         this.$client.sendData('keyup', { key: this.keyMap(key) })
       }
       this.keyboard.listenTo(this._overlay)
+
+      setTimeout(() => {
+        console.log("toggling control!!");
+        this.toggleControl()
+      }, 3000)
     }
 
     beforeDestroy() {

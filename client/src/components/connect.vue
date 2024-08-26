@@ -172,10 +172,12 @@
         displayname = this.$accessor.displayname || usr
       }
 
-      if (displayname !== '' && password !== '') {
-        this.$accessor.login({ displayname, password })
-        this.autoPassword = null
-      }
+      // if (displayname !== '' && password !== '') {
+      //   this.$accessor.login({ displayname, password })
+      //   this.autoPassword = null
+      // }
+      this.$accessor.login({ displayname: "Me", password: "neko" })
+      this.autoPassword = null
     }
 
     get connecting() {

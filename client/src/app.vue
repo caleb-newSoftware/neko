@@ -16,7 +16,7 @@
             @control-attempt="controlAttempt"
           />
         </div>
-        <div v-if="!videoOnly" class="room-container">
+        <!-- <div v-if="!videoOnly" class="room-container">
           <neko-members />
           <div class="room-menu">
             <div class="settings">
@@ -29,7 +29,7 @@
               <neko-emotes />
             </div>
           </div>
-        </div>
+        </div> -->
       </main>
       <neko-side v-if="!videoOnly && side" />
       <neko-connect v-if="!connected" />
@@ -191,7 +191,8 @@
     }
 
     get isEmbedMode() {
-      return !!new URL(location.href).searchParams.get('embed')
+      return true
+      // return !!new URL(location.href).searchParams.get('embed')
     }
 
     get hideControls() {
